@@ -1,11 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import AppLayout from '../layout/AppLayout.vue'
 import { useAuthStore } from '../stores/auth'
-import ChartView from '../views/ChartView.vue'
-import DashboardView from '../views/DashboardView.vue'
-import LoginView from '../views/LoginView.vue'
-import UserListView from '../views/UserListView.vue'
+import AppLayout from '../layout/AppLayout.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -13,7 +9,7 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: LoginView,
+      component: () => import('../views/LoginView.vue'),
       meta: {
         guestOnly: true,
       },
@@ -29,7 +25,7 @@ const router = createRouter({
         {
           path: 'dashboard',
           name: 'dashboard',
-          component: DashboardView,
+          component: () => import('../views/DashboardView.vue'),
           meta: {
             title: '工作台',
           },
@@ -37,7 +33,7 @@ const router = createRouter({
         {
           path: 'users',
           name: 'users',
-          component: UserListView,
+          component: () => import('../views/UserListView.vue'),
           meta: {
             title: '用户列表',
           },
@@ -45,7 +41,7 @@ const router = createRouter({
         {
           path: 'charts',
           name: 'charts',
-          component: ChartView,
+          component: () => import('../views/ChartView.vue'),
           meta: {
             title: '图表分析',
           },

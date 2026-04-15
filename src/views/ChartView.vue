@@ -1,16 +1,21 @@
 <script setup>
-import * as echarts from 'echarts'
+import { LineChart } from 'echarts/charts'
+import { GridComponent, LegendComponent, TooltipComponent } from 'echarts/components'
+import { init, use } from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const chartRef = ref(null)
 let chartInstance
+
+use([LineChart, GridComponent, LegendComponent, TooltipComponent, CanvasRenderer])
 
 function renderChart() {
   if (!chartRef.value) {
     return
   }
 
-  chartInstance = echarts.init(chartRef.value)
+  chartInstance = init(chartRef.value)
   chartInstance.setOption({
     tooltip: {
       trigger: 'axis',
