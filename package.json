@@ -1,0 +1,32 @@
+{
+  "name": "vue3-admin-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple Vue 3 admin demo with login, sidebar, list, and ECharts.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/houmengtao1023/houmengtao-elend.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/houmengtao1023/houmengtao-elend/issues"
+  },
+  "homepage": "https://github.com/houmengtao1023/houmengtao-elend#readme",
+  "dependencies": {
+    "echarts": "^6.0.0",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.32",
+    "vue-router": "^5.0.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.6",
+    "vite": "^8.0.8"
+  }
+}
